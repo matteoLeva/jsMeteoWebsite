@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <title>Metio</title>
+</head>
+<body>
+    <section id="header">
+    <!--Luogo-->
+    <div class="position-container">
+    <span id="icon-position"class="material-icons"> my_location </span>
+    <h1 id="nm-luogo">Frosinone</h1>
+    </div>
+    <!--Button ingrandimento-->
+    <button class="circle-srchbar">
+        <span class="material-icons">search</span>
+    </button>
+    
+    </section><!--fine HEADER-->
+
+    <!--Searchbar-->
+    <div class="srchbar-container">
+        <input type="text" placeholder="Cerca" id="srchbar" hidden>
+    </div>
+
+    <!--METEO-->
+    <section id="main">
+    <img class="meteo-icon" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDMwMi40IDMwMi40IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAzMDIuNCAzMDIuNDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0yMDQuOCw5Ny42QzE5MS4yLDg0LDE3Miw3NS4yLDE1MS4yLDc1LjJzLTQwLDguNC01My42LDIyLjRjLTEzLjYsMTMuNi0yMi40LDMyLjgtMjIuNCw1My42czguOCw0MCwyMi40LDUzLjYgICAgIGMxMy42LDEzLjYsMzIuOCwyMi40LDUzLjYsMjIuNHM0MC04LjQsNTMuNi0yMi40YzEzLjYtMTMuNiwyMi40LTMyLjgsMjIuNC01My42UzIxOC44LDExMS4yLDIwNC44LDk3LjZ6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik0xNTEuMiw1MS42YzUuNiwwLDEwLjQtNC44LDEwLjQtMTAuNFYxMC40YzAtNS42LTQuOC0xMC40LTEwLjQtMTAuNGMtNS42LDAtMTAuNCw0LjgtMTAuNCwxMC40djMwLjggICAgIEMxNDAuOCw0Ni44LDE0NS42LDUxLjYsMTUxLjIsNTEuNnoiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPHBhdGggZD0iTTIzNi40LDgwLjhsMjItMjJjNC00LDQtMTAuNCwwLTE0LjRzLTEwLjQtNC0xNC40LDBsLTIyLDIyYy00LDQtNCwxMC40LDAsMTQuNEMyMjUuNiw4NC44LDIzMiw4NC44LDIzNi40LDgwLjh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik0yOTIsMTQwLjhoLTMwLjhjLTUuNiwwLTEwLjQsNC44LTEwLjQsMTAuNGMwLDUuNiw0LjgsMTAuNCwxMC40LDEwLjRIMjkyYzUuNiwwLDEwLjQtNC44LDEwLjQtMTAuNCAgICAgQzMwMi40LDE0NS42LDI5Ny42LDE0MC44LDI5MiwxNDAuOHoiIGZpbGw9IiMwMDAwMDAiLz4KCQkJPHBhdGggZD0iTTIzNiwyMjEuNmMtNC00LTEwLjQtNC0xNC40LDBzLTQsMTAuNCwwLDE0LjRsMjIsMjJjNCw0LDEwLjQsNCwxNC40LDBzNC0xMC40LDAtMTQuNEwyMzYsMjIxLjZ6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik0xNTEuMiwyNTAuOGMtNS42LDAtMTAuNCw0LjgtMTAuNCwxMC40VjI5MmMwLDUuNiw0LjgsMTAuNCwxMC40LDEwLjRjNS42LDAsMTAuNC00LjgsMTAuNC0xMC40di0zMC44ICAgICBDMTYxLjYsMjU1LjYsMTU2LjgsMjUwLjgsMTUxLjIsMjUwLjh6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik02NiwyMjEuNmwtMjIsMjJjLTQsNC00LDEwLjQsMCwxNC40czEwLjQsNCwxNC40LDBsMjItMjJjNC00LDQtMTAuNCwwLTE0LjRDNzYuOCwyMTcuNiw3MC40LDIxNy42LDY2LDIyMS42eiIgZmlsbD0iIzAwMDAwMCIvPgoJCQk8cGF0aCBkPSJNNTEuNiwxNTEuMmMwLTUuNi00LjgtMTAuNC0xMC40LTEwLjRIMTAuNGMtNS42LDAtMTAuNCw0LjgtMTAuNCwxMC40czQuOCwxMC40LDEwLjQsMTAuNGgzMC44ICAgICBDNDYuOCwxNjEuNiw1MS42LDE1Ni44LDUxLjYsMTUxLjJ6IiBmaWxsPSIjMDAwMDAwIi8+CgkJCTxwYXRoIGQ9Ik02Niw4MC44YzQsNCwxMC40LDQsMTQuNCwwczQtMTAuNCwwLTE0LjRsLTIyLTIyYy00LTQtMTAuNC00LTE0LjQsMHMtNCwxMC40LDAsMTQuNEw2Niw4MC44eiIgZmlsbD0iIzAwMDAwMCIvPgoJCTwvZz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
+    <h1 id="temperature">30°c</h1>
+    </section>
+    <!--FRASE-->
+    <p id="caption">Una t-shirt va più che bene</p>
+    <!--PROSSIMI GIORNI-->
+<div class="nextdays-container">
+    
+    <!--Giorno1-->
+    <div class="day-container">
+        <p class="nm-day-1">Mar</p>
+        <img src="img/rainy.png" class="day-meteo-icon-1">
+        <p class="day-temperature-max-1">24° <span class="day-temperature-min-1">16°</span></p>
+    </div>
+    <!--Giorno2-->
+    <div class="day-container">
+        <p class="nm-day-2">Mer</p>
+        <img src="img/rainy.png" class="day-meteo-icon-1">
+        <p class="day-temperature-max-2">24° <span class="day-temperature-min-2">16°</span></p>
+    </div>
+    <!--Giorno3-->
+    <div class="day-container">
+        <p class="nm-day-3">Gio</p>
+        <img src="img/rainy.png" class="day-meteo-icon-1">
+        <p class="day-temperature-max-3">24° <span class="day-temperature-min-3">16°</span></p>
+    </div>
+</div>
+
+<!--<div>Icons made by <a href="https://www.flaticon.com/free-icon/sun_606795" title="Good Ware">Good Ware</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+    <script src="js/script.js" type="text/javascript"></script>
+</body>
+</html>

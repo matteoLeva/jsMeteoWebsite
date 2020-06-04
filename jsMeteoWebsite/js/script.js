@@ -1,11 +1,27 @@
-let circleBtnSearch = document.querySelector(".circle-srchbar");
+let circleBtnSearch = document.querySelector("#circle-srchbar");
 //Mostra e nascondi searchbar
 circleBtnSearch.onclick = function() {
-    window.onkeypress = function() {
-        srchBar.click()
+    
+let controlCrclBtnSrchState = circleBtnSearch.getAttribute("class")
+
+    if(controlCrclBtnSrchState === "not-active") {
+        srchBar.removeAttribute("disabled"); //non è sicuramente il giusto metodo, però ci accontentiamo
+        srchBar.hidden = false;
+        
+        srchBar.style.opacity = "1";
+        srchBar.setAttribute("class", "srchbar-anim-in");
+        circleBtnSearch.setAttribute("class", "active");
+        
+    } else {
+        srchBar.setAttribute("class", "srchbar-anim-out");
+        circleBtnSearch.setAttribute("class", "not-active");
+        srchBar.style.opacity = "0";
+        srchBar.disabled = "true";
+        
     }
-    srchBar.hidden = !srchBar.hidden;
 }
+
+//if(srchBar.hidden == false) srchBar.autofocus = true;
 
 //API
 const api = {
@@ -24,6 +40,7 @@ function setQuery(event) {
     if(event.keyCode == 13) { //13 è l'unicode che corrisponde al tasto INVIO
         getResults(srchBar.value); //in input la città e in output le informazioni
         srchBar.value = "";
+        circleBtnSearch.setAttribute("class", "not-active");
         srchbar.hidden = !srchbar.hidden;
     }
 }
@@ -44,6 +61,8 @@ function displayResults(weather) {
     //il valore può essere Clouds, Clear, etc...
     let apiMeteo = weather.weather[0].main;
 
+
+    console.log("Il meteo è " + apiMeteo)
         //Rimane così perché non pensavo funzionasse, e invece :)
         function lollino() {
             console.log("CIAO AMICO MIO");
@@ -114,24 +133,54 @@ function displayResults(weather) {
             }
         
     };
-    //
+    
+    //prendi l'immagine in base al meteo
     meteoIcon.setAttribute("src",`img/${imgUrl}/${imgUrl}${dOrN()}-b.png`);
+
+    console.log(meteoIcon)
+    //array con le frasi predefinite
+    let frasiObj = {
+    under10: "Hey guarda! Un pinguino",
+    over10: "Conviene portare il cappotto",
+    over20: "Non fa freddo dai",
+    over25: "Una t-shirt va più che bene",
+    over30: "Fa caldo assai",
+    rainy: "\"Fuori piove e...\"",
+    stayhome: "Conviene restare a casa...",
+    snowy: "Nevica 😍",
+    cloudy: "Conviene portare l'ombrello"
+    }
 
     //cambia frase in base alla temperatura
      let frase = document.querySelector("#caption");
+
      for(let i = 0; i <= numberTemp; i++) {
         if(i <= 10) {
-            frase.textContent = frasiArray.under10;
+            frase.textContent = frasiObj.under10;
         } else if (i < 17) {
-            frase.textContent = frasiArray.over10;
+            frase.textContent = frasiObj.over10;
         } else if(i < 24) {
-            frase.textContent = frasiArray.over20; 
+            frase.textContent = frasiObj.over20; 
         } else if(i < 29) {
-            frase.textContent = frasiArray.over25;
+            frase.textContent = frasiObj.over25;
         } else {
-            frase.textContent = frasiArray.over30;
+            frase.textContent = frasiObj.over30;
         }
         }
+
+        //SE piove o nevica, cambia la frase
+        let ifRain = meteoIcon.getAttribute("src").toString();
+
+        if(ifRain.includes("rain")) {
+            frase.textContent = frasiObj.rainy;
+        } else if(ifRain.includes("snow")) {
+            frase.textContent = frasiObj.snowy;
+        } else if(ifRain.includes("thunderstorm")) {
+            frase.textContent = frasiObj.stayhome;
+        } else if(ifRain.includes("clouds")) {
+            frase.textContent = frasiObj.cloudy;
+        }
+      
     
     //informazioni aggiuntive: umidità, vento ...
 
@@ -154,15 +203,6 @@ function displayResults(weather) {
 
 } //fine funzione DisplayResults
 
-//array con le frasi predefinite
-let frasiArray = {
-    under10: "Hey guarda! Un pinguino",
-    over10: "Conviene portare il cappotto",
-    over20: "Non fa freddo dai",
-    over25: "Una t-shirt va più che bene",
-    over30: "Fa caldo assai"
-}
-
 //ANIMAZIONE
 let moreInfoContainer = document.querySelector(".moreinfo-container");
 let moreInfoP = document.querySelector("#moreinfo");
@@ -176,13 +216,13 @@ moreInfoContainer.onclick = function(){
         moreInfoP.textContent = "Meno informazioni";
         moreInfoUl.style.visibility = "visible"; //lista non ordinata resa visibile
         moreInfoUl.style.animation = "showLi .3s ease-in-out forwards .2s" //lista non ordinata animazione
-        arrowInfo.style.transform = "rotate(180deg)";
+        arrowInfo.style.transform = "rotate(180deg)"; //freccetta 
     } else {
 
         moreInfoP.textContent = "Più informazioni";
         moreInfoContainer.style.animation = "toup .4s ease-in-out forwards"; //div che si accorcia
-        moreInfoUl.style.animation = ".2s" //lista non ordinata animazione
-        arrowInfo.style.transform = "rotate(360deg)";
+        moreInfoUl.style.animation = "hiddenLi .2s"; //ul scompare
+        arrowInfo.style.transform = "rotate(360deg)"; //freccetta 
         
     }
    

@@ -36,7 +36,7 @@ body {
 }
 /*SEARCHBAR*/
 /*Button lente ingrandimento*/
-.circle-srchbar {
+#circle-srchbar {
   border: none;
   outline: none;
   height: 35px;
@@ -46,22 +46,30 @@ body {
   border-radius: 50%;
   text-align: center;
   cursor: pointer;
+  /*box-shadow: 3px 3px 7px rgba(0,0,0,.3),
+    -3px -3px 7px rgba(255, 255, 255,1);*/
+  transition: all ease-in-out .3s;
+}
+.not-active {
   box-shadow: 3px 3px 7px rgba(0,0,0,.3),
     -3px -3px 7px rgba(255, 255, 255,1);
-  transition: all ease-in-out .3s;
 }
-.circle-srchbar:hover {
-  transition: all ease-in-out .3s;
+.active {
   box-shadow: 3px 3px 7px rgba(255, 255, 255,1),
-    -3px -3px 7px rgba(0,0,0,.3);
+  -3px -3px 7px rgba(0,0,0,.3);
 }
-.circle-srchbar:active{
+#circle-srchbar:hover {
+  transition: all ease-in-out .3s;
+  background: rgb(212, 212, 212);
+}
+#circle-srchbar:active{
   -webkit-tap-highlight-color: transparent;
 }
 
 /*icona*/
-.circle-srchbar span {
+#circle-srchbar span {
   color: #575757;
+  transform: translateX(2px);
 }
 /*Input text*/
 .srchbar-container {
@@ -71,12 +79,6 @@ body {
     align-items: center;
 }
 #srchbar {
-  animation: fadein .4s;
-  -webkit-animation: fadein .4s; /* Safari, Chrome and Opera > 12.1 */
-     -moz-animation: fadein .4s; /* Firefox < 16 */
-      -ms-animation: fadein .4s; /* Internet Explorer */
-       -o-animation: fadein .4s; /* Opera < 12.1 */
-          animation: fadein .4s;
     width: 100%;
     padding: 4px 4px 4px 10px;
     background: #e0e0e0;
@@ -87,6 +89,26 @@ body {
     box-shadow: 3px 3px 7px rgba(0,0,0,.3),
     -3px -3px 7px rgba(255, 255, 255,1);
   }
+
+  .srchbar-anim-in {
+    animation: fadein .4s;
+    -webkit-animation: fadein .4s; 
+       -moz-animation: fadein .4s; 
+        -ms-animation: fadein .4s; 
+         -o-animation: fadein .4s; 
+            animation: fadein .4s;
+  }
+
+  .srchbar-anim-out {
+    animation: fadeout .2s;
+    -webkit-animation: fadeout .2s; 
+       -moz-animation: fadeout .2s; 
+        -ms-animation: fadeout .2s; 
+         -o-animation: fadeout .2s; 
+            animation: fadeout .2s;
+  }
+
+/*>>>>>>>>>>>>>>>>>>>>Animation in*/
   @keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
@@ -108,6 +130,30 @@ body {
     from { opacity: 0; }
     to   { opacity: 1; }
   }
+
+/*>>>>>>>>>>>>>>>>>>>>Animation out*/
+@keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+/* Firefox < 16 */
+@-moz-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeout {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
   /*MAIN*/
   #main {
     padding: 0px 30px 0px 30px;
@@ -195,8 +241,8 @@ body {
     from {opacity: 0;}
     to {opacity: 1};
   }
- /* @keyframes hideLi {
+ @keyframes hiddenLi {
     from {opacity: 1;}
     to {opacity: 0;}
-  }*/
+  }
   

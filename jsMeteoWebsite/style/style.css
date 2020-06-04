@@ -6,6 +6,7 @@
     user-select: none;
     -moz-user-select: none;
     -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -169,6 +170,8 @@ body {
   #arrow {
       font-weight: bold;
       font-size: 1.4em;
+      transition: transform .4s;
+      transition-timing-function: ease;
   }
   /*lista umidita, vento ...*/
   .moreinfo-ul{
@@ -183,16 +186,17 @@ body {
     visibility: hidden;
     opacity: 0;
   }
-  /*ANIMAZIONE LISTA*/
-  @keyframes showLi {
-    from {opacity: 0;}
-    to {opacity: 1;}
-  }
-  @keyframes hideLi {
-    from {opacity: 1;}
-    to {opacity: 0;}
-  }
   .to-right {
     font-weight: normal;
     float: right;
   }
+  /*ANIMAZIONE LISTA*/
+  @keyframes showLi {
+    from {opacity: 0;}
+    to {opacity: 1};
+  }
+ /* @keyframes hideLi {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }*/
+  

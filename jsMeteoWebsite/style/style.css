@@ -54,6 +54,9 @@ body {
   box-shadow: 3px 3px 7px rgba(255, 255, 255,1),
     -3px -3px 7px rgba(0,0,0,.3);
 }
+.circle-srchbar:active{
+  -webkit-tap-highlight-color: transparent;
+}
 
 /*icona*/
 .circle-srchbar span {
@@ -130,44 +133,66 @@ body {
     color: #575757;
   }
 
-  /*PROSSIMI GIORNI*/
-  .nextdays-container {
-    display: flex;
-    justify-content: space-around;
-    width: 250px;
-    padding: 5px;
+  /*PIU INFORMAZIONI container*/
+  .moreinfo-container {
+    text-align: left;
+    width: 300px;
+    height: 45px;
+    padding: 10px 10px 10px 13px; /*25px bottom*/
     background: #e0e0e0;
-    font-size: 1.1em;
+    font-size: 1.3em;
+    color: #4e4e4e;
     border-radius: 5px;
     outline: none;
     margin:60px auto;
     box-shadow: 3px 3px 7px rgba(0,0,0,.3),
    -3px -3px 7px rgba(255,255,255,1);
+
+    
   }
-  /*CONTENITORE GIORNO*/
-  .day-container {
-    width: 70px;
+  /*Piu informazioni e arrow*/
+  .moreinfo-bar {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  /*ANIMAZIONE*/
+  @keyframes todown {
+    from {height: 45px}
+    to {height: 210px;}
+  }
+  @keyframes toup {
+    from {height: 210px}
+    to {height: 45px;}
+  }
+  /*freccia in basso*/
+  #arrow {
+      font-weight: bold;
+      font-size: 1.4em;
+  }
+  /*lista umidita, vento ...*/
+  .moreinfo-ul{
+    height: 100px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    line-height: 35px;
-  }
-  /*nome giorno*/
-  .nm-day-1 {
-    text-align:center;
-  }
-  /*immagine meteo*/
-  .day-meteo-icon-1 {
-    width: 50px;
-  }
-  /*temperature max*/
-  .day-temperature-max-1, .day-temperature-max-2, .day-temperature-max-3 {
+    justify-content: space-between;
+    margin-top: 40px;
+    list-style: none;
     font-weight: bold;
-    font-size: 15px;
+    
+    visibility: hidden;
+    opacity: 0;
   }
-  /*temperature min*/
-  .day-temperature-min-1, .day-temperature-min-2, .day-temperature-min-3 {
-    font-weight: bold;
-    font-size: 15px;
-    color: #575757;
+  /*ANIMAZIONE LISTA*/
+  @keyframes showLi {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  @keyframes hideLi {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+  .to-right {
+    font-weight: normal;
+    float: right;
   }

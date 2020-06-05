@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/Matteo%20Leva/Desktop/jsMeteoWebsite/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Metio_files/style.css">
+    <link href="./Metio_files/css2" rel="stylesheet">
+    <link href="./Metio_files/icon" rel="stylesheet">
+    <title>Metio</title>
+</head>
+<body>
+    <section id="header">
+    <!--Luogo-->
+    <div class="position-container">
+    <span id="icon-position" class="material-icons">room</span>
+    <h1 id="nm-luogo">Lido di Ostia</h1>
+    </div>
+    <!--Button ingrandimento-->
+    <button id="circle-srchbar" class="not-active">
+        <span class="material-icons" id="srch-btn-icon">search</span>
+    </button>
+    
+    </section><!--fine HEADER-->
+
+    <!--Searchbar-->
+    <div class="srchbar-container">
+        <input type="text" placeholder="Cerca" id="srchbar" class="" hidden="">
+    </div>
+
+    <!--METEO-->
+    <section id="main">
+    <img class="meteo-icon" src="./Metio_files/clouds-s-b.png">
+    <h1 id="temperature">294°c</h1>
+    </section>
+    <!--FRASE-->
+    <p id="caption">Conviene portare l'ombrello</p>
+
+
+    <!--TEMP MIN e TEMP MAX-->
+    <section id="temp-minmax">
+        <div class="temp-min-container">
+
+        </div>
+    </section>
+    <!--PIU INFORMAZIONI-->
+    <div class="moreinfo-container">
+        <div class="moreinfo-bar">
+        <p id="moreinfo">Più informazioni</p>
+        <span class="material-icons" id="arrow">keyboard_arrow_down</span>
+        </div>
+        <!--Vento, umidita, precipitazioni-->
+        <ul class="moreinfo-ul">
+            <li class="moreinfo-li">Umidità
+                <span class="to-right" id="humidity">60%</span>
+            </li>
+            <li class="moreinfo-li">Vento
+                <span class="to-right" id="wind">2 km/h</span>
+            </li>
+            <li class="moreinfo-li">Nuvole
+                <span class="to-right" id="clouds">34</span>
+            </li>
+        </ul>
+    </div>
+    
+    <script src="./Metio_files/script.js.download" type="text/javascript"></script>
+    <script src="./Metio_files/geolocation.js.download" type="text/javascript"></script>
+
+</body></html>
